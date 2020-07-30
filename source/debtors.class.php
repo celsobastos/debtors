@@ -33,7 +33,6 @@
             $stmt->execute();
             $result = $stmt->get_result();
             $stmt->close();
-            
             return  $result ;
         }
 
@@ -48,10 +47,7 @@
             $result = $stmt->get_result();
             $row = $result->fetch_assoc();
             $row['data_nascimento'] = date('d-m-Y', strtotime($row['data_nascimento']));
-
-   
             $stmt->close();
-
             return  $row;
         }
 
@@ -98,8 +94,6 @@
                 $this->update,
                 $this->id_debtors);
 
-            
-
             /* execute prepared statement */
             mysqli_stmt_execute($stmt);
             $stmt->close();
@@ -113,7 +107,6 @@
 
             $stmt = mysqli_prepare($this->conn, "DELETE FROM " . $this->db_table . " WHERE id_debtors = ?");
             mysqli_stmt_bind_param($stmt, 'd', $this->id_debtors);
-
             $this->id_debtors = htmlspecialchars(strip_tags($this->id_debtors));
 
             /* execute prepared statement */

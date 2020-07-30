@@ -1,9 +1,9 @@
 <?php
 
 class Database {
-    private $host = "127.0.0.1";
-    private $database_name = "bd_debtors";
-    private $username = "sage";
+    private $host = "fdb2.awardspace.net";
+    private $database_name = "1037317_contatos";
+    private $username = "1037317_contatos";
     private $password = "@g1l3t3c";
 
     public $conn;
@@ -25,28 +25,8 @@ class Database {
 
         return $this->conn;
 
-        //$this->conn->close();
-        
     }
 }  
-
-
-
-(new Database())->getConnection();
-
-/*
-
-$mysqli = new mysqli("localhost", "sage", "@g1l3t3c", "test_php");
-
-/* check connection * /
-if (mysqli_connect_errno()) {
-    printf("Connect failed: %s\n", mysqli_connect_error());
-    exit();
-}
-
-*/
-
-
 
 
 ?>
